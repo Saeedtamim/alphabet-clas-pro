@@ -1,7 +1,7 @@
 // Gaming loop
 function countinueGame(){
     const alphabet = randomAlphabe();
-    console.log(alphabet);
+    // console.log(alphabet);
 
     // randomly alphabet generate
     const currentAlphabet =document.getElementById('random-alphabet-showing');
