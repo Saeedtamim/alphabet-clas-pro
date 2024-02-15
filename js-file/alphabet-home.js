@@ -24,7 +24,10 @@ function handlerKeyboardButtonPress(event) {
         const currentLife = getTextElementById('lifeline');
         const updateLifline = currentLife - 1;
         setTextValueById('lifeline',updateLifline);
-        console.log('You lost.')
+        console.log('Try again.')
+        if(updateLifline === 0){
+            gameOver();
+        }
     }
 }
 document.addEventListener('keyup', handlerKeyboardButtonPress);
@@ -48,8 +51,21 @@ function countinueGame(){
 function play(){
     // hide
     hideElementById('alphabet-home-section');
+    hideElementById('final-score');
     // show
     showElementById('play-now-id');
+
+    // reset score and life 
+    setTextValueById('lifeline', 5)
+    setTextValueById('score-board', 0)
     // random alphabet
     countinueGame()
+}
+
+// Game over
+function gameOver(){
+    // hide
+    hideElementById('play-now-id');
+    // show
+    showElementById('final-score');
 }
